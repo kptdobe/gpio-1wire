@@ -19,11 +19,11 @@ w1.list(function (err, devices) {
         for (var i = 0; i < devices.length; i++) {
             //try to read temperature of a DS18B20 sensor
             console.log('Will read device: ', devices[i].device);
-            w1.read(devices[i].device, 'DS18B20', function (err, value) {
+            w1.read(devices[i].device, 'DS18B20', function (err, info, value) {
                 if (err != null) {
                     console.log('Error', err);
                 } else {
-                    console.log('Successfully read value ', value);
+                    console.log('Successfully read device ' + info.device + ' : ' + value + ' °C');
                 }
             });
         }
