@@ -1,6 +1,8 @@
-//mock the GPIO inside a folder 'mocks' of the current folder
-//var w1 = require('./index')({path: __dirname + '/mocks'});
-var w1 = require('./index')({mockPath: '/Users/alex/work/dev/private/gpio-mocker/mocks'});
+//version to run on a Raspberry Pi to access "read" physical bus
+var w1 = require('./index');
+
+//use mockPath to mock the 1-wire bus inside a folder 'mocks' of the current folder
+//var w1 = require('./index')({mockPath: __dirname + '/mocks'});
 
 w1.list(function (err, devices) {
     console.log('Found devices: ', devices);
